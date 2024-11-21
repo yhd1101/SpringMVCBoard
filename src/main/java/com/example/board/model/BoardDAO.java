@@ -25,4 +25,19 @@ public class BoardDAO {
         logger.info("logger : {}" , "데이터개수 : " + lists.size());
         return lists;
     }
+
+    public int boardWriteOk(BoardTO to) {
+        // 처리에 대한 결과
+        int flag = 1;
+
+        String sql = "insert into board1 values ( 0, ?, ?, ?, ?, ?, 0, ?, now() )";
+        int result = jdbcTemplate.update(
+                sql,
+                to.getSubject(), to.getWriter(), to.getMail(), to.getPassword(), to.getContent(), to.getWip() );
+        if( result == 1 ) {
+            flag = 0;
+        }
+
+        return flag;
+    }
 }

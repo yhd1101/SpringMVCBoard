@@ -8,6 +8,34 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../../css/board.css">
+<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById( 'wbtn' ).onclick = function() {
+			//alert( '버튼 클릭' );
+			if ( document.wfrm.info.checked == false ) {
+				alert( '동의하셔야 합니다.' );
+				return false;
+			}
+
+			if ( document.wfrm.writer.value == '' ) {
+				alert( '글쓴이를 입력하셔야 합니다.' );
+				return false;
+			}
+
+			if ( document.wfrm.subject.value == '' ) {
+				alert( '제목을 입력하셔야 합니다.' );
+				return false;
+			}
+
+			if ( document.wfrm.password.value == '' ) {
+				alert( '비밀번호를 입력하셔야 합니다.' );
+				return false;
+			}
+
+			document.wfrm.submit();
+		};
+	};
+</script>
 </head>
 
 <body>
@@ -18,7 +46,7 @@
 </div>
 <div class="con_menu"></div>
 <div class="con_txt">
-	<form action="" method="post" name="">
+	<form action="write_ok.do" method="post" name="wfrm">
 		<div class="contents_sub">	
 			<!--게시판-->
 			<div class="board_write">
@@ -71,7 +99,7 @@
 					<input type="button" value="목록" class="btn_list btn_txt02" style="cursor: pointer;" onclick="location.href='list.do'" />
 				</div>
 				<div class="align_right">
-					<input type="button" value="쓰기" class="btn_write btn_txt01" style="cursor: pointer;" />
+					<input type="button" id="wbtn" value="쓰기" class="btn_write btn_txt01" style="cursor: pointer;" />
 				</div>
 			</div>
 			<!--//게시판-->
