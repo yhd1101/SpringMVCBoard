@@ -1,7 +1,11 @@
 package com.example.board.model;
 
 
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class BoardTO {
 
     private  String seq;
