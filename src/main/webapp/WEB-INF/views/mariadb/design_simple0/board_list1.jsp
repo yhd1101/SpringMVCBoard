@@ -37,7 +37,7 @@
 			<tr>
 				<td>&nbsp;</td>
 				<td>1</td>
-				<td class="left"><a href="board_view1.jsp">adfas</a>&nbsp;<img src="../../images/icon_new.gif" alt="NEW"></td>
+				<td class="left"><a href="view.do">adfas</a>&nbsp;<img src="../../images/icon_new.gif" alt="NEW"></td>
 				<td>asdfa</td>
 				<td>2017-01-31</td>
 				<td>6</td>
@@ -46,7 +46,7 @@
 			<tr>
 				<td>&nbsp;</td>
 				<td>1</td>
-				<td class="left"><a href="board_view1.jsp">adfas</a>&nbsp;<img src="../../images/icon_new.gif" alt="NEW"></td>
+				<td class="left"><a href="view.do">adfas</a>&nbsp;<img src="../../images/icon_new.gif" alt="NEW"></td>
 				<td>asdfa</td>
 				<td>2017-01-31</td>
 				<td>6</td>
@@ -57,7 +57,7 @@
 
 		<div class="btn_area">
 			<div class="align_right">
-				<input type="button" value="쓰기" class="btn_write btn_txt01" style="cursor: pointer;" onclick="location.href='board_write1.jsp'" />
+				<input type="button" value="쓰기" class="btn_write btn_txt01" style="cursor: pointer;" onclick="location.href='write.do'" />
 			</div>
 		</div>
 		<!--//게시판-->
