@@ -3,6 +3,7 @@ package com.example.board.controller;
 
 import com.example.board.model.BoardDAO;
 import com.example.board.model.BoardTO;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,7 +35,18 @@ public class BoardController {
     }
 
     @RequestMapping("/write_ok.do")
-    public String write_ok() {
+    public String write_ok(HttpServletRequest request, Model model) {
+        BoardTO to  = new BoardTO();
+        to.setSubject(request.getParameter("subject"));
+        to.setWriter(request.getParameter("writer"));
+        to.setMail(request.getParameter("mail1") + "@" + request.getParameter("mail2"));
+        to.setPassword(request.getParameter("password"));
+        to.setContent(request.getParameter("content"));
+        to.setWip(request.getRemoteAddr());
+
+        int flag = boardDAO.boardWriteOk(to);
+
+        model.addAttribute("flag", flag);
         return "board_write1_ok";
     }
 
